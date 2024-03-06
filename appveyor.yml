@@ -3,7 +3,8 @@ init:
  - ps: Update-AppveyorBuild -Message "Image '$env:APPVEYOR_BUILD_WORKER_IMAGE'@'$env:APPVEYOR_BUILD_WORKER_CLOUD' cloud. $env:APPVEYOR_REPO_COMMIT_MESSAGE"
  - sh: echo $APPVEYOR_BUILD_WORKER_IMAGE
  - sh: echo $APPVEYOR_BUILD_WORKER_CLOUD
- - sh: sudo apt install libstdc++-12-dev
+ #- sh: sudo apt install libstdc++-12-dev
+ - sh: apt-get -y -q install gcc-11 g++-11 && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 40 --slave /usr/bin/g++ g++ /usr/bin/g++-11
 
 test_script:
 - flutter upgrade --force
