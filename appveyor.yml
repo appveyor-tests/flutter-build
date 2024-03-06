@@ -6,6 +6,7 @@ init:
 
 test_script:
 - flutter upgrade --force
+- flutter doctor -v
 - flutter create --platforms linux myapp
 - cd myapp
 - flutter build linux
