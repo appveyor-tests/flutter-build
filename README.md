@@ -1,2 +1,2 @@
-# flutter_build
+# flutter-build
 Test building of flutter app. 
